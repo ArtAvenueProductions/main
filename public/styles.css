@@ -1,0 +1,101 @@
+/* Main Page */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+.home-nav-div {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-logo {
+  width: 20%;
+}
+
+.home-logo > h2 {
+  text-align: center;
+}
+
+.lang-select {
+  display: flex;
+  flex-direction: row;
+  margin: -8% 0 0 80%;
+}
+
+.lang-select > div {
+  margin-right: 10px;
+}
+
+.eng-div {
+  margin: 3px 0 0 0;
+}
+
+.home-navs {
+  margin: 6% auto 2% 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-navs > div {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* About Page */
+
+.profile-window {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-div {
+  width: 40%;
+  margin: 2% 10%;
+}
+
+.profile-div > img {
+  display: block;
+  margin: auto;
+  width: 60%;
+  height: 50%;
+  border-radius: 100%;
+}
+
+.profile-div > p {
+  text-align: center;
+}
+
+/* Work Page */
+
+.categories-canvas {
+  width: 100%;
+  min-height: 500px;
+  margin: 0;
+  background-color: white;
+}
+
+.categories-box {
+  width: 80%;
+  margin-left: 10%;
+  border: 2px solid orange;
+  display: flex;
+  flex-direction: row;
+}
+
+.category-grid {
+  width: 220px;
+  height: 200px;
+  background-color: black;
+  text-align: center;
+  margin: 5%;
+}
+
+.category-grid > p {
+  margin-top: 50%;
+}
