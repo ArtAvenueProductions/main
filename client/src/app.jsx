@@ -6,18 +6,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      language: 'English',
-      english: {},
-      traditional: {},
-      simplified: {}
+      language: 'english'
     }
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+  }
+
+  handleLanguageChange(lang) {
+    this.setState({
+      language: lang
+    })
   }
 
   render() {
-    const {language, english, traditional, simplified} = this.state;
-    const library = language === 'English' ? english : language === 'Traditional' ? traditional : simplified;
+    const { language } = this.state;
     return (
-      <HomePage info={library}/>
+      <HomePage language={language} languageChange={this.handleLanguageChange}/>
     )
   }
 }

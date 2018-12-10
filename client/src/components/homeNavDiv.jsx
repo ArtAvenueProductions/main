@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDom from 'react-dom';
 import HomeLogo from './homeLogo.jsx';
 import LangSelect from './langSelect.jsx';
 import HomeNavs from './homeNavs.jsx';
@@ -9,9 +8,9 @@ const HomeNavDiv = (props) => {
     <div className="home-nav-div">
       <div>
         <HomeLogo />
-        <LangSelect />
+        <LangSelect language={props.language} languageChange={props.languageChange} />
       </div>
-      <HomeNavs changeWindow={props.clickFunction}/>
+      <HomeNavs language={props.language} />
     </div>
   )
 }

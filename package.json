@@ -19,12 +19,18 @@
   },
   "homepage": "https://github.com/ArtAvenueProductions/main#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "fs": "0.0.1-security",
     "http": "0.0.0",
+    "nodemailer": "^4.7.0",
     "path": "^0.12.7",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-player": "^1.7.1",
+    "react-router-dom": "^4.3.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
