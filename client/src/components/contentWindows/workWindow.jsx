@@ -74,10 +74,7 @@ class WorkWindow extends React.Component {
               { name: "BREATHE",
                 identifier: "BREATHE",
                 img: "https://s3.amazonaws.com/art-avenue-productions/work/breathe.png",
-                link: "https://vimeo.com/138398817" },
-              { name: "BREATHE 2",
-                identifier: "BREATHE-2",
-                status: "coming soon" }
+                link: "https://vimeo.com/138398817" }
             ]
           }
         ],
@@ -145,10 +142,7 @@ class WorkWindow extends React.Component {
               { name: "BREATHE",
                 identifier: "BREATHE",
                 img: "https://s3.amazonaws.com/art-avenue-productions/work/breathe.png",
-                link: "https://vimeo.com/138398817" },
-              { name: "BREATHE 2",
-                identifier: "BREATHE-2",
-                status: "coming soon" }
+                link: "https://vimeo.com/138398817" }
             ]
           }
         ],
@@ -216,10 +210,7 @@ class WorkWindow extends React.Component {
               { name: "BREATHE",
                 identifier: "BREATHE",
                 img: "https://s3.amazonaws.com/art-avenue-productions/work/breathe.png",
-                link: "https://vimeo.com/138398817" },
-              { name: "BREATHE 2",
-                identifier: "BREATHE-2",
-                status: "coming soon" }
+                link: "https://vimeo.com/138398817" }
             ]
           }
         ]
@@ -245,7 +236,7 @@ class WorkWindow extends React.Component {
           <Route path="/work" exact render={(props) =><WorkCategories {...props} categories={categories} language={language}/>}/>
           <Route path="/work/musicVideo" exact render={(props) => <WorkVideos {...props} context={context[0]} route={routes[0]} />} />
           <Route path="/work/musicVideo/BLOSSOM" exact render={(props) => <VideoContainer {...props} route={routes[0]} context={context[0].videos[2]} />} />
-          <Route path="/work/musicVideo/BROKEN-RECORD" exact render={(props) => <VideoContainer {...props} context={context[0].videos[3]} />} />
+          <Route path="/work/musicVideo/BROKEN-RECORD" exact render={(props) => <VideoContainer {...props} route={routes[0]} context={context[0].videos[3]} />} />
           <Route path="/work/commercial" exact render={(props) => <WorkVideos {...props} context={context[1]} route={routes[1]} />} />
           <Route path="/work/commercial/COCA-COLA" exact render={(props) => <VideoContainer {...props} route={routes[1]} context={context[1].videos[0]} />} />
           <Route path="/work/commercial/ALWAYS" exact render={(props) => <VideoContainer {...props} route={routes[1]} context={context[1].videos[1]} />} />

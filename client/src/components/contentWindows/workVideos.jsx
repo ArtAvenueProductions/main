@@ -17,19 +17,22 @@ class WorkVideos extends React.Component {
     const { context, route } = this.props;
     const videos = context.videos;
     return (
-      <div>
+      <div className="videos-div">
+        <NavLink to="/work" className="back-to-work">
+          back
+        </NavLink>
         <div className="videos-title-div">
           <h1 className="videos-title">{context.name}</h1>
         </div>
         <div className="videos-box">
           {
             videos.map((video, i) => {
-              if (i % 2 === 0) {
+              if (i % 2 === 0 && videos[i + 1]) {
                 return (
-                  <div className="videos-row">
+                  <div key={i} className="videos-row">
                     {
                       videos[i].status === "coming soon" ? 
-                      (<div key={i} className="video-grid" style={{ backgroundImage: `url(${videos[i].img})`, backgroundSize: "cover" }}>
+                      (<div className="video-grid" style={{ backgroundImage: `url(${videos[i].img})`, backgroundSize: "cover" }}>
                         <h1 className="video-p">{videos[i].name}</h1>
                         <span className="coming-soon">COMING SOON</span>
                       </div>)
@@ -42,7 +45,7 @@ class WorkVideos extends React.Component {
                     }
                     {
                       videos[i + 1].status === "coming soon" ? 
-                      (<div key={i} className="video-grid" style={{ backgroundImage: `url(${videos[i + 1].img})`, backgroundSize: "cover" }}>
+                      (<div className="video-grid" style={{ backgroundImage: `url(${videos[i + 1].img})`, backgroundSize: "cover" }}>
                         <h1 className="video-p">{videos[i + 1].name}</h1>
                         <span className="coming-soon">COMING SOON</span>
                       </div>)
@@ -50,6 +53,24 @@ class WorkVideos extends React.Component {
                       (<NavLink to={`/work/${route}/${videos[i + 1].identifier}`} className="video-grid" style={{ textDecoration: "none", backgroundImage: `url(${videos[i + 1].img})`, backgroundSize: "cover" }}>
                         <div key={i}>
                           <h1 className="video-p">{videos[i + 1].name}</h1>
+                        </div>
+                      </NavLink>)
+                    }
+                  </div>
+                )
+              } else if (i % 2 === 0) {
+                return (
+                  <div key={i} className="videos-row">
+                    {
+                      videos[i].status === "coming soon" ? 
+                      (<div className="video-grid" style={{ backgroundImage: `url(${videos[i].img})`, backgroundSize: "cover" }}>
+                        <h1 className="video-p">{videos[i].name}</h1>
+                        <span className="coming-soon">COMING SOON</span>
+                      </div>)
+                      : 
+                      (<NavLink to={`/work/${route}/${video.identifier}`} className="video-grid" style={{ textDecoration: "none", backgroundImage: `url(${videos[i].img})`, backgroundSize: "cover" }}>
+                        <div key={i}>
+                          <h1 className="video-p">{videos[i].name}</h1>
                         </div>
                       </NavLink>)
                     }

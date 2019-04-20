@@ -3,7 +3,9 @@ var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/public');
 var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
-
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 
 module.exports = {
@@ -20,8 +22,11 @@ module.exports = {
         loader : 'babel-loader',
         query: {
           presets: ['react', 'es2015']
-       }
+        },
       }
-    ]
+    ],
+  },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
   }
 };

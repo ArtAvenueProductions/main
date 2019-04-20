@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+// import serialize from "serialize-javascript";
 
 class Contact extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Contact extends React.Component {
       }
     };
     this.submitForm = this.submitForm.bind(this);
+    this.escapeHtml = this.escapeHtml.bind(this);
   }
 
   handleChange(event) {
@@ -25,21 +27,31 @@ class Contact extends React.Component {
     });
   }
 
+  escapeHtml(unsafe) {
+    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+
   submitForm() {
     const { name, email, phone, subject, content } = this.state;
     if (name && email && content) {
-      console.log('rammus: ok');
       axios.post('/submitForm', {
-        name,
-        email,
-        phone,
-        subject,
-        content
-      }).then((res) => {
-        console.log(res);
-      }).catch((err) => {
-        console.log(err);
+        name: this.escapeHtml(name),
+        email: this.escapeHtml(email),
+        phone: this.escapeHtml(phone),
+        subject: this.escapeHtml(subject),
+        content: this.escapeHtml(content)
       })
+      this.setState({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        content: ''
+      }, () => {
+        window.alert('Message sent!');
+      })
+    } else {
+      window.alert('Please fill in the required information.');
     }
   }
 
@@ -55,19 +67,19 @@ class Contact extends React.Component {
         <div className="contact-form-div">
           <form>
             <div>
-              <input name="name" placeholder={formFields[1] + "*"} className="name-input" type="text" onChange={(e) => this.handleChange(e)} />
+              <input name="name" placeholder={formFields[1] + "*"} className="name-input" type="text" onChange={(e) => this.handleChange(e)} value={this.state.name} />
             </div>
             <div>
-              <input name="email" placeholder={formFields[2] + "*"} className="email-input" type="email" onChange={(e) => this.handleChange(e)} />
+              <input name="email" placeholder={formFields[2] + "*"} className="email-input" type="email" onChange={(e) => this.handleChange(e)} value={this.state.email} />
             </div>
             <div>
-              <input name="phone" placeholder={formFields[3]} className="phone-input" type="tel" onChange={(e) => this.handleChange(e)} />
+              <input name="phone" placeholder={formFields[3]} className="phone-input" type="tel" onChange={(e) => this.handleChange(e)} value={this.state.phone} />
             </div>
             <div>
-              <input name="subject" placeholder={formFields[4]} className="subject-input" type="text" onChange={(e) => this.handleChange(e)} />
+              <input name="subject" placeholder={formFields[4]} className="subject-input" type="text" onChange={(e) => this.handleChange(e)} value={this.state.subject} />
             </div>
             <div>
-              <textarea name="content" placeholder={formFields[5] + "*"} cols="40" rows ="5" className="content-input" onChange={(e) => this.handleChange(e)}></textarea>
+              <textarea name="content" placeholder={formFields[5] + "*"} cols="40" rows ="5" className="content-input" onChange={(e) => this.handleChange(e)} value={this.state.content} ></textarea>
             </div>
           </form>
           <button className="form-submit-button" onClick={()=> this.submitForm()}>Submit</button>

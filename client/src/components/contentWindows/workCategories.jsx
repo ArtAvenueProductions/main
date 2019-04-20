@@ -22,7 +22,7 @@ class WorkCategories extends React.Component {
         {
           context.map((category, i) => {
             return (
-              <NavLink to={`/work/${this.camelCategory(categories.english[i].name)}`} style={{ textDecoration: 'none' }} className="category-grid">
+              <NavLink to={`/work/${this.camelCategory(categories.english[i].name)}`} style={{ textDecoration: 'none' }} className="category-grid" key={i}>
                 <div key={i}>
                   <p>{category.name}</p>
                 </div>

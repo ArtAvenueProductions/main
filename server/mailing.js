@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const account = require('./accountInfo.js');
 
 let transporter = nodemailer.createTransport({
+  service: 'Zoho',
   host: 'smtp.zoho.com',
   port: 587,
   secure: false,
@@ -11,13 +12,13 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-let mailOptions = {
-  from: '"Kadi Tsang" <kadi@artavenue.global>',
-  to: 'ansonaoao@gmail.com',
-  subject: 'Hello',
-  text: 'Hello World',
-  html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js'
-};
+// let mailOptions = {
+//   from: '"Kadi Tsang" <kadi@artavenue.global>',
+//   to: 'ansonaoao@gmail.com',
+//   subject: 'Hello',
+//   text: 'Hello World',
+//   html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js'
+// };
 
 // transporter.sendMail(mailOptions, (err, options) => {
 //   if (err) {

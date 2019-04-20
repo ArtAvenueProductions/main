@@ -8,7 +8,6 @@ class VideoContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { context, route } = this.props;
     return (
       <div className="video-container-div">

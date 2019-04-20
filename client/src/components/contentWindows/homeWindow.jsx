@@ -17,10 +17,9 @@ class HomeWindow extends React.Component {
   }
 
   render() {
-    console.log(this.props.language);
     return (
       <div className="home-video-player">
-        <video autoPlay muted loop id="home-vid" onClick={() => this.handleVideoClick()}>
+        <video autoPlay muted loop id="home-vid" onClick={() => this.handleVideoClick()} width="100%">
           <source src="https://s3.amazonaws.com/art-avenue-productions/artAvenue_reel_v03.mp4" type="video/mp4"/>
         </video>
       </div>
