@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class EventContainer extends React.Component {
   constructor(props) {
@@ -38,9 +39,15 @@ class EventContainer extends React.Component {
         </div>
         <div className="event-info-div">
           <h2>{event.title}</h2>
-          <p>{`${event.dofW} ${event.month} ${event.day} | ${event.venue}`}</p>
-          <a href={event.url} target="_blank"><button className="register-button">
-          {event.url ? "Register Now" : "Coming Soon"}</button></a>
+          <p>{`${event.dofW}, ${event.month} ${event.day} | ${event.venue}`}</p>
+          {event.external ? 
+            <a href={event.url} target="_blank"><button className="register-button">
+            {event.url ? "Register Now" : "Coming Soon"}</button></a>
+            :
+            <NavLink to={`/events/${event.navlink}`} style={{ textDecoration: 'none' }}>
+              <button className="register-button">Details</button>
+            </NavLink>
+          }
         </div>
       </div>
     )
