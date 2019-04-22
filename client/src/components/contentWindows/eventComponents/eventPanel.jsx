@@ -18,7 +18,7 @@ class EventPanel extends React.Component {
     return (
       <div className="event-panel-div">
         <div className="event-panel-img-div">
-          <img style={{height: "360px", width: "auto", objectFit: "contain"}} src={eventInfo.imgUrl} />
+          <img style={{height: "100%", width: "100%", objectFit: "contain"}} src={eventInfo.imgUrl} />
         </div>
         <div className="event-panel-info-div">
           <div className="event-panel-date">
@@ -29,8 +29,7 @@ class EventPanel extends React.Component {
             <p>{eventInfo.title}</p>
           </div>
           <div className="event-panel-address">
-            <p>{`at ${address.location}`}</p>
-            <p id="event-panel-street-address">{`${address.street}, ${address.city}, ${address.state} ${address.zipcode}`}</p>
+            <p>{`at `}<a href={address.url} target="_blank">{address.location}</a></p>
           </div>
         </div>
       </div>

@@ -32,6 +32,7 @@ class EventContainer extends React.Component {
           //   :
           //   <p>{`${event.dofW} ${event.month} ${event.day} | ${event.venue}`}</p>
           //   }
+    console.log(event.imageUrl);
     return (
       <div className="event-container" onMouseEnter={(e) => this.hoverEvent(e)} onMouseLeave={(e)=> this.leaveEvent(e)}>
         <div className="event-photo-div">
@@ -39,7 +40,11 @@ class EventContainer extends React.Component {
         </div>
         <div className="event-info-div">
           <h2>{event.title}</h2>
-          <p>{`${event.dofW}, ${event.month} ${event.day} | ${event.venue}`}</p>
+          <p>{`${event.dofW}, ${event.month} ${event.day} | `}
+            <a href={event.locationUrl} target="_blank">
+              {event.venue}
+            </a>
+          </p>
           {event.external ? 
             <a href={event.url} target="_blank"><button className="register-button">
             {event.url ? "Register Now" : "Coming Soon"}</button></a>

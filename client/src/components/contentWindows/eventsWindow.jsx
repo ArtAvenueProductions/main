@@ -24,6 +24,7 @@ class EventsWindow extends React.Component {
       upcoming: [
         {
           eventId: 2,
+          locationUrl: "https://www.google.com/maps/place/OUTRO+NYC/@40.7327739,-73.9909446,15z/data=!4m2!3m1!1s0x0:0xf05f25545c3910be?sa=X&ved=2ahUKEwiLmdbI0-HhAhXEmOAKHZofDv8Q_BIwCnoECAsQCA",
           img: "https://s3.amazonaws.com/art-avenue-productions/events/contemporaryDissonance.png",
           title: "Contemporary Dissonance",
           dofW: "Sun",
@@ -39,6 +40,7 @@ class EventsWindow extends React.Component {
       past: [
         {
           eventId: 1,
+          locationUrl: "https://www.google.com/maps/place/Brooklyn+Bazaar/@40.7299355,-73.9546495,15z/data=!4m2!3m1!1s0x0:0x753d4bec0b60c0f4?sa=X&ved=2ahUKEwjFkMOD1eHhAhXhlOAKHfK1Dp0Q_BIwG3oECAsQCA0",
           img: "https://s3.amazonaws.com/art-avenue-productions/events/past-event-1.jpg",
           title: "RAW Brooklyn presents CONNECT",
           dofW: "Wed",

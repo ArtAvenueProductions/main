@@ -398,16 +398,16 @@ video {
   grid-template-columns: 2fr 1fr;
 }
 
-.event-panel-img-div {
+/*.event-panel-img-div {
   border-left: 1px solid lightgrey;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
-}
+}*/
 
 .event-panel-info-div {
-  border: 0.5px solid lightgrey;
+  /*border: 0.5px solid lightgrey;*/
   text-align: left;
-  padding-left: 2%;
+  padding-left: 5%;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -417,9 +417,14 @@ video {
 }
 
 .event-panel-date {
-  margin-top: 1em;
-  max-width: 40px;
+  font-size: 2em;
+  margin-top: 2em;
+  max-width: 100px;
   text-align: center;
+}
+
+.event-panel-date p {
+  margin-bottom: 10%;
 }
 
 .event-panel-date-day {
@@ -429,6 +434,7 @@ video {
 .event-panel-title {
   font-size: 1.4em;
   margin-top: 20%;
+  font-weight: bold;
 }
 
 .event-panel-address {
@@ -449,15 +455,38 @@ video {
 .event-body-div {
   display: grid;
   grid-template-columns: 0.8fr 3fr 1.4fr;
+  min-height: 600px;
 }
 
-.event-body-div div {
-  border: 0.5px solid lightgrey;
+/*.event-body-div > :first-child {
+  border-bottom: 0.5px solid lightgrey;
+  border-left: 0.5px solid lightgrey;
+}*/
+
+.event-body-div > :nth-child(2) {
+  border-left: 0.5px solid lightgrey;
+  border-right: 0.5px solid lightgrey;
 }
+
+/*.event-body-div > :nth-child(3) {
+  border-bottom: 0.5px solid lightgrey;
+  border-right: 0.5px solid lightgrey;
+}*/
 
 .event-body-categories {
   text-align: right;
   padding-right: 10%;
+}
+
+.event-body-general-slogan {
+  padding: 0 10%;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.event-body-artists-title {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .event-body-category:hover {
@@ -466,21 +495,61 @@ video {
 }
 
 .general-people-list {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.event-body-content-paragraphs {
+  padding: 5% 10%;
+  text-align: left;
 }
 
 .individual-info {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  font-size: 0.9em;
 }
 
-.individual-info img {
+.member-img {
   display: block;
-  margin: auto;
   width: 180px;
-  height: 180px;
-  border-radius: 100%;
+  height: auto;
+  padding-top: 15%;
+}
+
+.event-body-content-artists {
+  padding: 5% 10%;
+  text-align: left;
+}
+
+.artist-div {
+  border-bottom: 0.5px solid lightgrey;
+  margin-bottom: 4%;
+  font-size: 0.9em;
+}
+
+.artist-info-div {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 20px;
+}
+
+.artist-info-div p {
+  margin: 0 auto;
+}
+
+.artist-img {
+  display: block;
+  width: 140px;
+  height: auto;
+  padding-top: 5%;
+}
+
+.event-body-content-team {
+  padding: 5%;
+  text-align: left;
 }
 
 /* Contact Page */
