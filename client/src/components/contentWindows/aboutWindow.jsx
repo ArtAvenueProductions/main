@@ -11,7 +11,7 @@ class AboutWindow extends React.Component {
             img: "https://s3.amazonaws.com/art-avenue-productions/katusha_pic.jpg",
             name: "Katusha Jin",
             role: "CO-FOUNDER",
-            description: "Katusha is both a painter and a filmmaker. She was born in the UK, and has lived in various cities including Beijing, Moscow, Hong Kong, and New York. Growing up in a multi-cultural environment has cultivated her interest in collaborations between artists of various backgrounds. A combination of curiosity and need led Katusha to co-found \"Art Avenue\", a place where artists can come together and share their cultural experiences. She is currently working on a Spring 2019 Exhibition, and hopes that together, we can spread knowledge through art."
+            description: "Katusha Jin is a New York based director, writer, and producer from the U.K. Although primarily known for her film work, she has also worked in the theatre and editorial scenes. Katusha grew up in a trilingual and multicultural environment, which cultivated her interest in collaborations between artists of diverse backgrounds. In her spare time, she participates in art exhibitions, produces music, and conducts research on the effects of cultural identity, parenting, and education on mental health."
           },
           traditional: {
             img: "https://s3.amazonaws.com/art-avenue-productions/katusha_pic.jpg",
@@ -31,7 +31,7 @@ class AboutWindow extends React.Component {
             img: "https://s3.amazonaws.com/art-avenue-productions/kadi_pic.jpg",
             name: "Kadi Tsang",
             role: "CO-FOUNDER",
-            description: "Kadi is a trilingual artist passionate with a mix of Arts and Science background, and a strong understanding towards the global development and conflicts of human nature. From producing to directing, to sound mixing, she has been in various departments and understands the art and beauty of each. Being open-minded and taking initiative on each of her projects, she devotes herself to creating a whole new world that would draw both herself and the audience in. She hopes to help spread culture and allow both the audience and herself to learn from one another."
+            description: "Kadi Tsang is a trilingual writer, director and producer based in New York. She has worked on various live shows, film productions and art events, with experience working in different departments.  Her interests includes global development, cultural conflicts and mental well-being, and she aims to help raise awareness on social issues and facilitate cultural exchange through her work."
           },
           traditional: {
             img: "https://s3.amazonaws.com/art-avenue-productions/kadi_pic.jpg",
@@ -50,25 +50,67 @@ class AboutWindow extends React.Component {
     }
   }
   render() {
-    const { language } = this.props;
+    const { language, isMobile } = this.props;
     const { profiles } = this.state;
+    const title = {
+      english: "ABOUT",
+      traditional: "關於我們",
+      simplified: "关于我们"
+    }
     const context = profiles.map((profile) => {
       return profile[language];
-    })
-    return (
-      <div className="profile-window">
-        {context.map((person) => {
-          return (
-            <div className="profile-div" key={person.name}>
-              <img src={person.img} />
-              <p>{person.name}</p>
-              <p>{person.role}</p>
-              <p>{person.description}</p>
-            </div>
-          )
-        })}
-      </div>
-    )
+    });
+
+    if (isMobile) {
+      return (
+        <div className="mobile-profile-window">
+          <h1>{title[language]}</h1>
+          <div className="mobile-whowe">
+            <h2 className="mobile-whowe-title">WHO WE ARE</h2>
+            <p>We are artists who aim to create social impact and invite change through art.</p>
+          </div>
+          <div className="mobile-whowe">
+            <h2 className="mobile-whowe-title">WHAT WE DO</h2>
+            <p>We Direct, Produce, and Write.</p>
+          </div>
+          {context.map((person) => {
+            return (
+              <div className="mobile-profile-div" key={person.name}>
+                <img src={person.img} />
+                <p>{person.name}</p>
+                <p>{person.role}</p>
+                <p>{person.description}</p>
+              </div>
+            )
+          })}
+        </div>
+      )
+    } else {
+      return (
+        <div className="profile-window-div">
+          <div>
+            <h2>WHO WE ARE</h2>
+            <p>We are artists who aim to create social impact and invite change through art.</p>
+          </div>
+          <div>
+            <h2>WHAT WE DO</h2>
+            <p>We Direct, Produce, and Write.</p>
+          </div>
+          <div className="profile-window">
+            {context.map((person) => {
+              return (
+                <div className="profile-div" key={person.name}>
+                  <img src={person.img} />
+                  <p>{person.name}</p>
+                  <p>{person.role}</p>
+                  <p>{person.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )
+    }
   }
 }
 

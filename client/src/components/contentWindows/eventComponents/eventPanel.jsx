@@ -17,8 +17,9 @@ class EventPanel extends React.Component {
     const monthString = this.formatDate(eventInfo.date);
     return (
       <div className="event-panel-div">
+        <div></div>
         <div className="event-panel-img-div">
-          <img style={{height: "100%", width: "100%", objectFit: "contain"}} src={eventInfo.imgUrl} />
+          <img style={{height: "auto", width: "100%", objectFit: "contain"}} src={eventInfo.imgUrl} />
         </div>
         <div className="event-panel-info-div">
           <div className="event-panel-date">

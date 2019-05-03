@@ -6,7 +6,7 @@ const Historical = (props) => {
   console.log(body);
   return (
     <div className="event-body-content-paragraphs">
-      <h3>Historical Background</h3>
+      <h2>Historical Background</h2>
       {body.map((paragraph, idx) => {
         return (<p key={`${title} ${idx}`}>{paragraph}</p>);
       })}

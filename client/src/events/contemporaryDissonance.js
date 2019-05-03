@@ -1,7 +1,7 @@
 let eventInfo = {
   title : "Contemporary Dissonance",
   slogan: "“An effort to support global artists showcasing their international cultural identities”",
-  date: new Date(2019, 4, 19),
+  date: new Date(2019, 4, 19, 17, 30),
   address: {
     location: "Outro NYC",
     street: "816 Broadway",
@@ -27,7 +27,7 @@ let eventInfo = {
       title: "Concept",
       body: [
         "With the hyper-globalization felt in every corner of the world, a new generation of artists have emerged, eager to express the contemporaneity they have experienced in their everyday lives.",
-        "Contemporary Dissonance is an exhibition like that of an experimental laboratory and artist playground, inviting young and emerging artists to showcase their own understanding of contemporaneity. No longer do these artists see histories of art and narratives as just intersecting and crossing over, but rather as a fluid and dynamic exchange that almost erases all sense of established identities and locales. They question the “East/West” dichotomy but moreover, they question the establishment of multiple narratives and histories: how do you separate one cultural identity from the other when the world you have experienced is fluid and dynamic? The four artists in this exhibition, Katusha Jin, Eric Lau, Yvonne Kwok, Jessica Zheng, all from different backgrounds and upbringings, question the very narrative of art and experience in their own works. Through the different media of painting, fashion and photography, there seems to be this common thread that links these artists together -- a rejection of pre-existing labels and identities while also a sense of uneasiness as they fail to find an identity they can associate with. The result is an exhibition of works from these artists that seem to voice a contemporary dissonance to the currently established narratives and identities."
+        "Contemporary Dissonance is an exhibition like that of an experimental laboratory and artist playground, inviting young and emerging artists to showcase their own understanding of contemporaneity. No longer do these artists see histories of art and narratives as just intersecting and crossing over, but rather as a fluid and dynamic exchange that almost erases all sense of established identities and locales. They question the “East/West” dichotomy but moreover, they question the establishment of multiple narratives and histories: how do you separate one cultural identity from the other when the world you have experienced is fluid and dynamic? The four artists in this exhibition, Katusha Jin, Eric Lau, Yvonne Kwok, all from different backgrounds and upbringings, question the very narrative of art and experience in their own works. Through the different media of painting, fashion and photography, there seems to be this common thread that links these artists together -- a rejection of pre-existing labels and identities while also a sense of uneasiness as they fail to find an identity they can associate with. The result is an exhibition of works from these artists that seem to voice a contemporary dissonance to the currently established narratives and identities."
       ]
     },
     {

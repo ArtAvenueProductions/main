@@ -6,7 +6,7 @@ const Artists = (props) => {
   console.log(artists);
   return (
     <div className="event-body-content-artists">
-      <h3>Artists</h3>
+      <h2>Artists</h2>
       {artists.map((artist, idx) => {
         return (<Artist key={`artist ${idx}`} artist={artist} />);
       })}

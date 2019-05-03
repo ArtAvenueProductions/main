@@ -58,13 +58,23 @@ class EventsWindow extends React.Component {
   }
 
   render() {
-    const { language } = this.props;
+    const { language, isMobile } = this.props;
     const { title, upcoming, past } = this.state;
+    if (isMobile) {
+      return (
+        <div className="mobile-outer-events-canvas">
+          <Switch>
+            <Route path="/events" exact render={(props) => <EventsList {...props} title={title} upcoming={upcoming} past={past} language={language} isMobile={isMobile}/>}/>
+            <Route path="/events/ContemporaryDissonance" exact render={(props) => <EventPage {...props} eventInfo={contemporaryDissonance} isMobile={isMobile} />} />
+          </Switch>
+        </div>
+      )
+    }
     return(
       <div className="events-canvas">
         <Switch>
-          <Route path="/events" exact render={(props) => <EventsList {...props} title={title} upcoming={upcoming} past={past} language={language} />}/>
-          <Route path="/events/ContemporaryDissonance" exact render={(props) => <EventPage {...props} eventInfo={contemporaryDissonance} />} />
+          <Route path="/events" exact render={(props) => <EventsList {...props} title={title} upcoming={upcoming} past={past} language={language} isMobile={isMobile}/>}/>
+          <Route path="/events/ContemporaryDissonance" exact render={(props) => <EventPage {...props} eventInfo={contemporaryDissonance} isMobile={isMobile} />} />
         </Switch>
       </div>
     )

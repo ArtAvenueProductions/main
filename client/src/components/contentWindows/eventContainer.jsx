@@ -22,7 +22,7 @@ class EventContainer extends React.Component {
   }
 
   render() {
-    const { event } = this.props;
+    const { event, isMobile } = this.props;
     const { hovered } = this.state;
     if (event.img === "") {
       event.img = "https://s3.amazonaws.com/art-avenue-productions/events/coming-soon.jpg";
@@ -32,7 +32,6 @@ class EventContainer extends React.Component {
           //   :
           //   <p>{`${event.dofW} ${event.month} ${event.day} | ${event.venue}`}</p>
           //   }
-    console.log(event.imageUrl);
     return (
       <div className="event-container" onMouseEnter={(e) => this.hoverEvent(e)} onMouseLeave={(e)=> this.leaveEvent(e)}>
         <div className="event-photo-div">
@@ -46,11 +45,11 @@ class EventContainer extends React.Component {
             </a>
           </p>
           {event.external ? 
-            <a href={event.url} target="_blank"><button className="register-button">
+            <a href={event.url} target="_blank"><button className={isMobile ? "mobile-register-button" : "register-button"}>
             {event.url ? "Register Now" : "Coming Soon"}</button></a>
             :
             <NavLink to={`/events/${event.navlink}`} style={{ textDecoration: 'none' }}>
-              <button className="register-button">Details</button>
+              <button className={isMobile ? "mobile-register-button" : "register-button"}>Details</button>
             </NavLink>
           }
         </div>

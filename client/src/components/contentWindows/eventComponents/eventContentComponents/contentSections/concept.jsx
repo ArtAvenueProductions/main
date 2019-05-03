@@ -6,7 +6,7 @@ const Concept = (props) => {
   console.log(body);
   return (
     <div className="event-body-content-paragraphs">
-      <h3>Concept</h3>
+      <h2>Concept</h2>
       {body.map((paragraph, idx) => {
         return (<p key={`${title} ${idx}`}>{paragraph}</p>);
       })}

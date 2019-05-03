@@ -5,7 +5,7 @@ const Team = (props) => {
   const members = props.info.members;
   return (
     <div className="event-body-content-team">
-      <h3>Team</h3>
+      <h2>Team</h2>
       {members.map((member, idx) => {
         return (<Member key={`member ${idx}`} description={member} />);
       })}

@@ -15,23 +15,43 @@ class WorkCategories extends React.Component {
   }
 
   render() {
-    const { categories, language } = this.props;
+    const { categories, language, isMobile } = this.props;
     const context = categories[language];
-    return (
-      <div className="categories-box">
-        {
-          context.map((category, i) => {
-            return (
-              <NavLink to={`/work/${this.camelCategory(categories.english[i].name)}`} style={{ textDecoration: 'none' }} className="category-grid" key={i}>
-                <div key={i}>
-                  <p>{category.name}</p>
-                </div>
-              </NavLink>
-            )
-          })
-        }
-      </div>
-    )
+    const title = categories.title[language];
+    if (isMobile) {
+      return (
+        <div className="mobile-categories-box">
+          <p className="mobile-categories-box-title">{title}</p>
+          {
+            context.map((category, i) => {
+              return (
+                <NavLink to={`/work/${this.camelCategory(categories.english[i].name)}`} style={{ textDecoration: 'none' }} className="mobile-category-grid" key={i}>
+                  <div key={i}>
+                    <p>{category.name}</p>
+                  </div>
+                </NavLink>
+              )
+            })
+          }
+        </div>
+      )
+    } else {
+      return (
+        <div className="categories-box">
+          {
+            context.map((category, i) => {
+              return (
+                <NavLink to={`/work/${this.camelCategory(categories.english[i].name)}`} style={{ textDecoration: 'none' }} className="category-grid" key={i}>
+                  <div key={i}>
+                    <p>{category.name}</p>
+                  </div>
+                </NavLink>
+              )
+            })
+          }
+        </div>
+      )
+    }
   }
 }
 

@@ -7,15 +7,15 @@ import EventsWindow from "./contentWindows/eventsWindow.jsx";
 import ContactWindow from "./contentWindows/contactWindow.jsx";
 
 const MainContent = (props) => {
-  const { language } = props;
+  const { language, isMobile } = props;
   return (
     <div>
       <Switch>
-        <Route path="/" render={(props) => <HomeWindow {...props} language={language} />} exact/>
-        <Route path="/about" render={(props) => <AboutWindow {...props} language={language} />} />
-        <Route path="/work" render={(props) => <WorkWindow {...props} language={language} />} />
-        <Route path="/events" render={(props) => <EventsWindow {...props} language={language} />} />
-        <Route path="/contact" render={(props) => <ContactWindow {...props} language={language} />} />
+        <Route path="/" render={(props) => <HomeWindow {...props} language={language} isMobile={isMobile} />} exact/>
+        <Route path="/about" render={(props) => <AboutWindow {...props} language={language} isMobile={isMobile} />} />
+        <Route path="/work" render={(props) => <WorkWindow {...props} language={language} isMobile={isMobile} />} />
+        <Route path="/events" render={(props) => <EventsWindow {...props} language={language} isMobile={isMobile} />} />
+        <Route path="/contact" render={(props) => <ContactWindow {...props} language={language} isMobile={isMobile} />} />
       </Switch>
     </div>
   )

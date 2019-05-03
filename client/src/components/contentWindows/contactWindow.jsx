@@ -57,6 +57,7 @@ class Contact extends React.Component {
 
   render() {
     const formFields = this.state.formFields[this.props.language];
+    const { isMobile } = this.props;
     return (
       <div className="contact-canvas">
         <div className="contact-us-div">
@@ -67,19 +68,19 @@ class Contact extends React.Component {
         <div className="contact-form-div">
           <form>
             <div>
-              <input name="name" placeholder={formFields[1] + "*"} className="name-input" type="text" onChange={(e) => this.handleChange(e)} value={this.state.name} />
+              <input name="name" placeholder={formFields[1] + "*"} className={isMobile ? "mobile-input" : "name-input"} type="text" onChange={(e) => this.handleChange(e)} value={this.state.name} />
             </div>
             <div>
-              <input name="email" placeholder={formFields[2] + "*"} className="email-input" type="email" onChange={(e) => this.handleChange(e)} value={this.state.email} />
+              <input name="email" placeholder={formFields[2] + "*"} className={isMobile ? "mobile-input" : "email-input"} type="email" onChange={(e) => this.handleChange(e)} value={this.state.email} />
             </div>
             <div>
-              <input name="phone" placeholder={formFields[3]} className="phone-input" type="tel" onChange={(e) => this.handleChange(e)} value={this.state.phone} />
+              <input name="phone" placeholder={formFields[3]} className={isMobile ? "mobile-input" : "phone-input"} type="tel" onChange={(e) => this.handleChange(e)} value={this.state.phone} />
             </div>
             <div>
-              <input name="subject" placeholder={formFields[4]} className="subject-input" type="text" onChange={(e) => this.handleChange(e)} value={this.state.subject} />
+              <input name="subject" placeholder={formFields[4]} className={isMobile ? "mobile-input" : "subject-input"} type="text" onChange={(e) => this.handleChange(e)} value={this.state.subject} />
             </div>
             <div>
-              <textarea name="content" placeholder={formFields[5] + "*"} cols="40" rows ="5" className="content-input" onChange={(e) => this.handleChange(e)} value={this.state.content} ></textarea>
+              <textarea name="content" placeholder={formFields[5] + "*"} cols="40" rows ="5" className={isMobile ? "mobile-content-input" : "content-input"} onChange={(e) => this.handleChange(e)} value={this.state.content} ></textarea>
             </div>
           </form>
           <button className="form-submit-button" onClick={()=> this.submitForm()}>Submit</button>

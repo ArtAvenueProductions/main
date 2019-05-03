@@ -8,7 +8,7 @@ class EventsList extends React.Component {
   }
 
   render() {
-    const { language, title, upcoming, past } = this.props;
+    const { language, title, upcoming, past, isMobile } = this.props;
     const upcomingTitle = title.upcoming[language];
     const pastTitle = title.past[language];
     return (
@@ -16,11 +16,11 @@ class EventsList extends React.Component {
         <div>
           <h1 className="events-title">{upcomingTitle}</h1>
         </div>
-        <div className="events-div">
+        <div className={isMobile ? "mobile-events-div" : "events-div"}>
           {
             upcoming.map((event) => {
               return (
-                <EventContainer key={event.eventId} event={event}/>
+                <EventContainer key={event.eventId} event={event} isMobile={isMobile}/>
               )
             })
           }
@@ -32,7 +32,7 @@ class EventsList extends React.Component {
         {
           past.map((event) => {
             return (
-              <EventContainer key={event.eventId} event={event}/>
+              <EventContainer key={event.eventId} event={event} isMobile={isMobile}/>
             )
           })
         }
